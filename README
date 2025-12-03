@@ -29,4 +29,4 @@ Items in the configuration.env are:
 
 To reset the chromadb call the python script using the command python .\populate_db.py --reset. To run without clearing the chromadb, remove the --reset from the command.
 
-To execute a query on the loaded PDFs use the command python .\query_db.py "Enter question in quotes".
+To execute a query on the loaded PDFs use the command python .\query_db.py "Enter question in quotes" or via .\run_app.bat command.
