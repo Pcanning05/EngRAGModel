@@ -1,0 +1,32 @@
+Download ollama to your computer by going to the website ollama.com and selecting
+the download for the environment it will be installed on.
+
+To set these scripts to be able to execute the user needs to do pip installs
+for the following items:
+    -   python-dotenv
+    -   langchain-community
+    -   langchain-classic
+    -   chromadb
+    -   pypdf
+
+The install command is pip install, then the item mentioned above.
+Version of Python is 3.13
+
+Models that are used currently are:
+    -   llama3.1:latest
+    -   nomic-embed-text:latest
+
+However, you can also use any model you want. Mistral was used before as well. To
+pull models, you use the command ollama pull then the name of the model you want. To see the models that have been pulled use the command ollama list. 
+
+Make sure to update the configuration.env with any path changes and model changes.
+Items in the configuration.env are:
+    -   COLLECTION_PATH - Path to place the chromadb when it is created
+    -   COLLECTION_NAME - Name of the chromadb 
+    -   PDF_PATH - Path that the PDFs are located to be loaded
+    -   LLM_EMBEDDING_MODEL - Name of the model to use for embedding
+    -   LLM_QUERY_MODEL - Name of the model to use for the querys of data in loaded PDFs
+
+To reset the chromadb call the python script using the command python .\populate_db.py --reset. To run without clearing the chromadb, remove the --reset from the command.
+
+To execute a query on the loaded PDFs use the command python .\query_db.py "Enter question in quotes".
